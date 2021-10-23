@@ -1,0 +1,29 @@
+---
+title: "Developing Data Products"
+author: "Abhimanyu Borthakur"
+date: "23/10/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+## Library and map object
+Create a leaflet map object.
+```{r cars}
+library(leaflet)
+my_map <- leaflet() %>%
+addTiles()
+```
+
+
+## Display map
+Create a link to the official site of Taj Mahal from where we could get relevant information.
+```{r}
+TajMahal <- c("<a href= 'https://www.tajmahal.gov.in/view_taj.html' >Taj Mahal</a>")
+leaflet() %>%
+addTiles() %>%
+addMarkers(lat=27.173891, lng=78.042068, popup = TajMahal)
+```
